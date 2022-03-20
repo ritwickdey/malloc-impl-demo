@@ -27,11 +27,12 @@ Here I've tried to implement `malloc` and `free` using `brk`, `sbrk`.
 Try to read **only** the comments.
 
 `my_malloc()` implementation using `brk` and `sbrk`.
-![malloc](./img/malloc.png)
+
+<img src="./img/malloc.png" height="450px">
 
 
 `my_free()` implementation using `brk` and `sbrk`.
-![free](./img/free.png)
+<img src="./img/free.png" height="350px">
 
 
 
