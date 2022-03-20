@@ -10,7 +10,7 @@
 #define WRITABLE_AREA(p) (((m_block *)p) + 1)
 #define HEADER_AREA(p) (((m_block *)p) - 1)
 
-#define MAX(X, Y) ((X > Y) ? X : Y)
+#define MAX(X, Y) (((X) > (Y)) ? (X) : (Y))
 
 typedef enum
 {
@@ -192,8 +192,8 @@ void *my_malloc(size_t size)
 
     if (mem == NULL) // if no free memory available in memory-pool
     {
-        // allocate big chunk memory at once.
-        size_t allocate_size = MAX(msize, MEM_ALLOC_LOT_SIZE);
+        // allocate big chunk memory at once. Max of (Multiple of PAGE_SIZE,  MEM_ALLOC_LOT_SIZE)
+        size_t allocate_size = MAX(((msize/PAGE_SIZE)+1)*PAGE_SIZE, MEM_ALLOC_LOT_SIZE);
 
         if ((mem = allocate_mem(allocate_size)) == NULL)
         {
