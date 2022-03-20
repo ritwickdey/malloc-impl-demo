@@ -29,7 +29,6 @@ typedef struct m_block
 
 m_block *g_mempool = NULL;
 
-
 void *to_writable_mem(void *mem)
 {
     return ((m_block *)mem) + 1;
@@ -140,7 +139,7 @@ void merge_free_blocks()
     }
 }
 
-void release_memory_from_last()
+void release_memory_if_requried()
 {
 
     m_block *ptr = g_mempool;
@@ -190,13 +189,15 @@ void *my_malloc(size_t size)
     m_block *mem = NULL;
     size_t msize = size + HEADER_SIZE;
 
+    // check memory-pool if any free memory available
     mem = scan_mem_pool(msize);
 
-    if (size == 0)
+    if (size == 0) // special case, check man page.
         return mem;
 
-    if (mem == NULL)
+    if (mem == NULL) // if no free memory available
     {
+        // allocate big chunk memory at once.
         size_t allocate_size = MAX(msize, MEM_ALLOC_LOT_SIZE);
 
         if ((mem = allocate_mem(allocate_size)) == NULL)
@@ -205,10 +206,14 @@ void *my_malloc(size_t size)
             return NULL;
         }
 
-        add_mem_to_pool(mem);
+        add_mem_to_pool(mem); // add the memory memory-pool
     }
 
+    // maybe user wants 20 bytes data but
+    // we may created/have big chunk of memory
+    // So, we'll resize the memory.
     resize_mem(mem, msize);
+
     mem->free = FALSE;
     return WRITABLE_AREA(mem);
 }
@@ -222,6 +227,11 @@ void my_free(void *mem)
     block->free = TRUE;
     debug_log("Freed %d bytes mem blocks.\n", block->size);
 
+    // after free, merge the small free chunks, so that 
+    // we can fulfil next memory requriment from memory pool.
     merge_free_blocks();
-    release_memory_from_last();
+
+    // if a big chunk of data is unused,
+    // then back the memory to system.
+    release_memory_if_requried();
 }
