@@ -32,6 +32,7 @@ Try to read **only** the comments.
 
 
 `my_free()` implementation using `brk` and `sbrk`.
+
 <img src="./img/free.png" height="350px">
 
 
