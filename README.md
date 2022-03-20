@@ -1,7 +1,7 @@
 Minimal implementation of malloc and free using `sbrk()` and `brk()` system calls. 
 
 ### Context:
-How process allocate/deallocate memory block in runtime?
+How does a process request the kernel to allocate/deallocate memory blocks in runtime?
 
 Whenever we create an object or list, we allocate memory in heap. Unlike `stack`, memory allocation in `heap` happens in runtime. No matter what programming language you choose, the fundamentals remain the same. 
 
