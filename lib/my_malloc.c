@@ -213,6 +213,7 @@ void *my_malloc(size_t size)
     return WRITABLE_AREA(mem);
 }
 
+
 void my_free(void *mem)
 {
     if (mem == NULL)
@@ -230,6 +231,8 @@ void my_free(void *mem)
     // then back the memory to system.
     release_memory_if_requried();
 }
+
+
 
 
 

@@ -30,12 +30,12 @@ Here I've tried to implement `malloc` and `free` using `brk`, `sbrk`.
 
 `my_malloc()` implementation using `brk` and `sbrk`.
 
-<img src="./img/malloc.png" height="450px">
+<img src="./img/malloc.png?v=2" height="450px">
 
 
 `my_free()` implementation using `brk` and `sbrk`.
 
-<img src="./img/free.png" height="350px">
+<img src="./img/free.png?v=2" height="350px">
 
 ### Reference:
 - The Linux Programming Interface by Michael Kerrisk
