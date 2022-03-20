@@ -17,6 +17,8 @@ Here I've tried to implement `malloc` and `free` using `brk`, `sbrk`.
 -------------
 ### Local setup
 ```
+> cd <project dir>
+> mkdir bin obj
 > make build
 > ./bin/mem_test
 ```
