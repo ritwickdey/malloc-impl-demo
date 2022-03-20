@@ -10,7 +10,7 @@ But there are no `free()` equivalent functions available in other high level-pro
 
 But `malloc()` and `free()` is library (`glibc`) functions, which means anyone can implement those function or tweak those function. Then the question is how `malloc()` or `free()` allocate or deallocate memory. 
 
-There is a few `system call` available to do that. `brk`, `sbrk` and `mmap` and `munmap`. Please check the man page to know more about the functions.
+There is a few `system call` available to do that. `brk`, `sbrk` and `mmap`, `munmap`. Please check the man page to know more about the functions.
 
 Here I've tried to implement `malloc` and `free` using `brk`, `sbrk` system calls.
 
