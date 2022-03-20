@@ -1,7 +1,7 @@
 Minimal implementation of malloc and free using `sbrk()` and `brk()` system calls. 
 
 ### Context:
-How does a process request the kernel to allocate/deallocate memory blocks in runtime?
+How does a process *actually* request the kernel to allocate/deallocate memory blocks in runtime?
 
 Whenever we create an object or list, we allocate memory in heap. Unlike `stack`, memory allocation in `heap` happens in runtime. No matter what programming language you choose, the fundamentals remain the same. 
 
@@ -12,7 +12,7 @@ But `malloc()` and `free()` is library (`glibc`) functions, which means anyone c
 
 There is a few `system call` available to do that. `brk`, `sbrk` and `mmap` and `munmap`. Please check the man page to know more about the functions.
 
-Here I've tried to implement `malloc` and `free` using `brk`, `sbrk`.
+Here I've tried to implement `malloc` and `free` using `brk`, `sbrk` system calls.
 
 -------------
 ### Local setup
