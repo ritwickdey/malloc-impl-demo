@@ -29,11 +29,6 @@ typedef struct m_block
 
 m_block *g_mempool = NULL;
 
-void *to_writable_mem(void *mem)
-{
-    return ((m_block *)mem) + 1;
-}
-
 void add_mem_to_pool(m_block *mem)
 {
     if (g_mempool == NULL)
