@@ -23,7 +23,16 @@ Here I've tried to implement `malloc` and `free` using `brk`, `sbrk`.
 -------------
 
 
+### Gist
+Try to read **only** the comments.
+
+`my_malloc()` implementation using `brk` and `sbrk`.
+![malloc](./img/malloc.png)
+
+
+`my_free()` implementation using `brk` and `sbrk`.
+![free](./img/free.png)
 
 
 
-
+---------
