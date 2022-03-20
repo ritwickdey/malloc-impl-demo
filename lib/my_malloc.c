@@ -201,7 +201,7 @@ void *my_malloc(size_t size)
             return NULL;
         }
 
-        add_mem_to_pool(mem); // add the memory memory-pool
+        add_mem_to_pool(mem); // add the memory to memory-pool
     }
 
     // maybe user wants 20 bytes data but
