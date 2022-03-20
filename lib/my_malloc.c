@@ -228,10 +228,14 @@ void my_free(void *mem)
     debug_log("Freed %d bytes mem blocks.\n", block->size);
 
     // after free, merge the small free chunks, so that 
-    // we can fulfil next memory requriment from memory pool.
+    // we can fulfil next memory requirement from memory-pool.
     merge_free_blocks();
 
     // if a big chunk of data is unused,
     // then back the memory to system.
     release_memory_if_requried();
 }
+
+
+
+
