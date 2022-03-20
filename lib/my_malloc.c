@@ -195,7 +195,7 @@ void *my_malloc(size_t size)
     if (size == 0) // special case, check man page.
         return mem;
 
-    if (mem == NULL) // if no free memory available
+    if (mem == NULL) // if no free memory available in memory-pool
     {
         // allocate big chunk memory at once.
         size_t allocate_size = MAX(msize, MEM_ALLOC_LOT_SIZE);
