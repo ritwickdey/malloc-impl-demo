@@ -35,6 +35,9 @@ Try to read **only** the comments.
 
 <img src="./img/free.png" height="350px">
 
-
+### Reference:
+- The Linux Programming Interface by Michael Kerrisk
+- Man page https://man7.org/linux/man-pages/man2/sbrk.2.html
+- https://stackoverflow.com/questions/6988487/what-does-the-brk-system-call-do (https://stackoverflow.com/a/31082353)
 
 ---------
