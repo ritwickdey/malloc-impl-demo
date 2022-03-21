@@ -38,6 +38,7 @@ Here I've tried to implement `malloc` and `free` using `brk`, `sbrk` system call
 <img src="./img/free.png?v=2" height="350px">
 
 ### Reference:
+- https://blog.holbertonschool.com/hack-the-virtual-memory-malloc-the-heap-the-program-break/
 - The Linux Programming Interface by Michael Kerrisk
 - Man page https://man7.org/linux/man-pages/man2/sbrk.2.html
 - https://stackoverflow.com/questions/6988487/what-does-the-brk-system-call-do (https://stackoverflow.com/a/31082353)
