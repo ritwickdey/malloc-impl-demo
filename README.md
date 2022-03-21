@@ -1,4 +1,4 @@
-Minimal implementation of malloc and free using `sbrk()` and `brk()` system calls. 
+Minimal implementation of `malloc` and `free` using `sbrk()` and `brk()` system calls. 
 
 ### Context:
 How does a process *actually* request the kernel to allocate/deallocate memory blocks in runtime?
