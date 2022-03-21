@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
     assert(b != NULL);
     printf("-----------------------------\n\n");
 
-    printf("[DEALLOCATE] requesting for %d bytes data.\n", 4064);
+    printf("[ALLOCATE] requesting for %d bytes data.\n", 4064);
     char *c = my_malloc(4064);
     assert(c != NULL);
     printf("-----------------------------\n\n");
@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
     my_free(a);
     printf("-----------------------------\n\n");
 
-    printf("[ALLOCATE] requesting to free b\n");
+    printf("[DEALLOCATE] requesting to free b\n");
     my_free(b);
     printf("-----------------------------\n\n");
 
@@ -36,6 +36,7 @@ int main(int argc, char *argv[])
     printf("[DEALLOCATE] requesting to free c\n");
     my_free(c);
     printf("-----------------------------\n\n");
+
     printf("[DEALLOCATE] requesting to free d\n");
     my_free(d);
     printf("-----------------------------\n\n");
